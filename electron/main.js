@@ -39,7 +39,11 @@ function desktopPassword() {
 }
 
 function nodeBinary() {
-  // Prefer the system Node (matches the ABI better-sqlite3 was installed for).
+  // Packaged: always run the server via Electron's own binary in Node mode.
+  // The bundled better-sqlite3 is rebuilt for Electron's ABI, and only the
+  // Electron binary can read the server code out of the asar archive.
+  if (app.isPackaged) return null;
+  // Dev: prefer the system Node (matches the ABI better-sqlite3 was installed for).
   const probe = spawnSync(process.platform === 'win32' ? 'node.exe' : 'node', ['-v'], { shell: false });
   if (!probe.error) return process.platform === 'win32' ? 'node.exe' : 'node';
   // Fallback: run Electron's binary in Node mode.
