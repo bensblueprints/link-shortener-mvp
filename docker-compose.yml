@@ -1,0 +1,14 @@
+services:
+  link-shortener:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "5302:5302"
+    environment:
+      - PORT=5302
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-changeme}
+      - BASE_URL=${BASE_URL:-}
+      - DEFAULT_REDIRECT_TYPE=${DEFAULT_REDIRECT_TYPE:-302}
+      - DB_PATH=/app/data/links.db
+    volumes:
+      - ./data:/app/data

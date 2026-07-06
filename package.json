@@ -1,0 +1,56 @@
+{
+  "name": "link-shortener",
+  "version": "1.0.0",
+  "description": "Self-hosted branded link shortener with click analytics. Pay once, own it forever.",
+  "type": "module",
+  "main": "electron/main.js",
+  "license": "MIT",
+  "author": "Ben (bensblueprints)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "desktop": "electron .",
+    "dist": "electron-builder --win nsis",
+    "test": "node test/smoke.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4",
+    "ua-parser-js": "^2.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^4.6.0",
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12",
+    "framer-motion": "^12.19.1",
+    "lucide-react": "^0.525.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.0"
+  },
+  "build": {
+    "appId": "com.bensblueprints.linkshortener",
+    "productName": "Link Shortener",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/**/*",
+      "server/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
