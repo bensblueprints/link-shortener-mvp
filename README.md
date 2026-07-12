@@ -77,7 +77,7 @@ The SQLite database persists in `./data`. Point your domain (e.g. `go.yourbrand.
 
 Don't want to touch a terminal? Grab the packaged one-click installer (plus updates and setup support) for a single one-time payment:
 
-**[→ Get it on Whop](https://whop.com/onetime-suite)**
+**[→ Get it on Whop](https://whop.com/benjisaiempire/trimly-app)**
 
 ## Tech stack
 
