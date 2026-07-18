@@ -1,5 +1,9 @@
 # Link Shortener
 
+## Demo
+
+VIDEO-PLACEHOLDER
+
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Node 20+](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)
 ![Self-hosted](https://img.shields.io/badge/self--hosted-100%25-blue.svg)
